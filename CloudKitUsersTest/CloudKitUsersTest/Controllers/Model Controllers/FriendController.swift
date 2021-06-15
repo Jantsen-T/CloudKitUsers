@@ -20,5 +20,7 @@ class FriendController{
             let friendRequest = FriendRequest(senderUsername: currentUser.username, receiverUsername: username)
         }
     }
-    func getUser(username: String, completion: @escaping(User)->Void)
+    func getUser(username: String, completion: @escaping(User)->Void){
+        
+    }
 }

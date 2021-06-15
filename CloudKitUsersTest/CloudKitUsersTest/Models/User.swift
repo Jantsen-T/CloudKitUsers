@@ -14,7 +14,7 @@ class User {
     let username: String
     var friends: [User]
     let profilePic: UIImage
-    let friendRequests: [FriendRequest]
+    var friendRequests: [FriendRequest]
     let experienceLevel: String
     let bio: String?
     //Insturment may be another model object
@@ -62,7 +62,14 @@ struct UserConstants {
     static let RecordType = "User"
     static let UsernameKey = "username"
     static let InstrumentKey = "instrument"
-    static let ExperienceLevelKey = "experience level"
+    static let ExperienceLevelKey = "experience_level"
+    static let ScreenNameKey = "screen_name"
+    static let ScreenNameToggleKey = "toggle_screen_name"
+    static let PFPkey = "profile_pic"
+    static let BioKey = "bio"
+    static let LocationKey = "location"
+    static let StyleTastesKey = "tastes_of_style"
+    static let FriendRequestsKey = "fwen_requests"
     
 }// End of Struct
 
@@ -70,8 +77,15 @@ extension User {
     convenience init?(ckRecord: CKRecord) {
         guard let username = ckRecord[UserConstants.UsernameKey] as? String,
               let instrument = ckRecord[UserConstants.InstrumentKey] as? String,
-              let experienceLevel = ckRecord[UserConstants.ExperienceLevelKey] as? String else { return nil }
-        self.init(ckRecordID: ckRecord.recordID)
+              let experienceLevel = ckRecord[UserConstants.ExperienceLevelKey] as? String,
+              let screenName = ckRecord[UserConstants.ScreenNameKey] as? String,
+              let showingScreenName = ckRecord[UserConstants.ScreenNameToggleKey] as? Bool,
+              let pfp = ckRecord[UserConstants.PFPkey] as? UIImage,
+              let bio = ckRecord[UserConstants.BioKey] as? String,
+              let location = ckRecord[UserConstants.LocationKey] as? String,
+              let styleTastes = ckRecord[UserConstants.StyleTastesKey] as? String,
+              let friendRequests = ckRecord[UserConstants.FriendRequestsKey] as? [FriendRequest] else { return nil}
+        self.init(showScreenName: showingScreenName, username: username)
     }
 }// End of extension
 
