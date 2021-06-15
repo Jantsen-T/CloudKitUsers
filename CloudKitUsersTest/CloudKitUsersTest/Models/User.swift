@@ -56,4 +56,30 @@ class User {
 struct FriendRequest{
     let senderUsername: String
     let receiverUsername: String
-}
+}// End of Struct
+
+struct UserConstants {
+    static let RecordType = "User"
+    static let UsernameKey = "username"
+    static let InstrumentKey = "instrument"
+    static let ExperienceLevelKey = "experience level"
+    
+}// End of Struct
+
+extension User {
+    convenience init?(ckRecord: CKRecord) {
+        guard let username = ckRecord[UserConstants.UsernameKey] as? String,
+              let instrument = ckRecord[UserConstants.InstrumentKey] as? String,
+              let experienceLevel = ckRecord[UserConstants.ExperienceLevelKey] as? String else { return nil }
+        self.init(ckRecordID: ckRecord.recordID)
+    }
+}// End of extension
+
+extension CKRecord {
+    convenience init(user: User) {
+        self.init(recordType: UserConstants.RecordType, recordID: user.ckRecordID)
+        self.setValue(user.username, forKey: UserConstants.UsernameKey)
+        self.setValue(user.instrument, forKey: UserConstants.InstrumentKey)
+        self.setValue(user.experienceLevel, forKey: UserConstants.ExperienceLevelKey)
+    }
+}// End of extension
