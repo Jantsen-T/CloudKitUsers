@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		039D60E62678F80B008DF47E /* FriendController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 039D60E52678F80B008DF47E /* FriendController.swift */; };
 		C0839CE726790A9E00FF1369 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0839CE626790A9E00FF1369 /* AppDelegate.swift */; };
 		C0839CE926790A9E00FF1369 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0839CE826790A9E00FF1369 /* SceneDelegate.swift */; };
 		C0839CEB26790A9E00FF1369 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0839CEA26790A9E00FF1369 /* ViewController.swift */; };
@@ -20,6 +21,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		039D60E52678F80B008DF47E /* FriendController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FriendController.swift; sourceTree = "<group>"; };
 		C0839CE326790A9E00FF1369 /* CloudKitUsersTest.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CloudKitUsersTest.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		C0839CE626790A9E00FF1369 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		C0839CE826790A9E00FF1369 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -47,6 +49,22 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		039D60E02678F7DE008DF47E /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				039D60E12678F7E5008DF47E /* Model Controllers */,
+			);
+			path = Controllers;
+			sourceTree = "<group>";
+		};
+		039D60E12678F7E5008DF47E /* Model Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				039D60E52678F80B008DF47E /* FriendController.swift */,
+			);
+			path = "Model Controllers";
+			sourceTree = "<group>";
+		};
 		C0839CDA26790A9E00FF1369 = {
 			isa = PBXGroup;
 			children = (
@@ -67,8 +85,10 @@
 		C0839CE526790A9E00FF1369 /* CloudKitUsersTest */ = {
 			isa = PBXGroup;
 			children = (
+
 				C0839D09267918CF00FF1369 /* Helpers */,
 				C0839D022679137300FF1369 /* Controllers */,
+
 				C0839CFF26790C2200FF1369 /* Models */,
 				C0839CFA26790AB800FF1369 /* CloudKitUsersTest.entitlements */,
 				C0839CFE26790AFD00FF1369 /* Resources */,
@@ -210,7 +230,9 @@
 			files = (
 				C0839D0126790C2D00FF1369 /* User.swift in Sources */,
 				C0839CEB26790A9E00FF1369 /* ViewController.swift in Sources */,
+
 				C0839D07267913AF00FF1369 /* UserController.swift in Sources */,
+
 				C0839CE726790A9E00FF1369 /* AppDelegate.swift in Sources */,
 				C0839D0B267918E200FF1369 /* Errors.swift in Sources */,
 				C0839CE926790A9E00FF1369 /* SceneDelegate.swift in Sources */,
